@@ -1,14 +1,9 @@
 import React from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import './style.css'
+import ReactDOM from 'react-dom/client'
+import App from './App'
 
-const root = createRoot(document.getElementById('root'))
-root.render(<App />)
-
-// Register SW for PWA (if supported)
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(() => {})
-  })
-}
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
